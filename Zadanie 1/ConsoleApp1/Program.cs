@@ -9,19 +9,17 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            string connectionSTring = @"Data Source=DESKTOP-9SL4PUT;Initial Catalog=ZNorthwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=True";
-            using var SqlConnection = new SqlConnection(connectionSTring);
-            SqlConnection.Open();
-
+            using var SqlConnection = DBCrud.SQLConnection();
+            DBCrud.SQLConnectOpen(SqlConnection);
             DBCrud dBCrud = new DBCrud();
             dBCrud.Read(SqlConnection);
             dBCrud.Insert(SqlConnection);
             dBCrud.Update(SqlConnection);
             dBCrud.Delete(SqlConnection);
+            DBCrud.SQLConnectClose(SqlConnection);
 
 
 
-            SqlConnection.Close();
 
         }
     }

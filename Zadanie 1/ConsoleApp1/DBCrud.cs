@@ -89,5 +89,19 @@ namespace ConsoleApp1
             Console.WriteLine("Delete Succes");
 
         }
+        public static void SQLConnectOpen(SqlConnection SqlConnection)
+        {
+            SqlConnection.Open();
+        }
+        public static void SQLConnectClose(SqlConnection SqlConnection)
+        {
+            SqlConnection.Close();
+        }
+        public static SqlConnection SQLConnection()
+        {
+            string connectionSTring = @"Data Source=DESKTOP-9SL4PUT;Initial Catalog=ZNorthwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=True";
+            var SqlConnection = new SqlConnection(connectionSTring);
+            return SqlConnection;
+        }
     }
 }
