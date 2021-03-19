@@ -7,7 +7,9 @@ namespace ConsoleApp1
 {
     public class DBCrud
     {
-        public void Read(SqlConnection SqlConnection)
+        private SqlConnection SqlConnection;
+
+        public void Read()
         {
 
             var zapytanie = "Select * FROM dbo.Spedytorzy ";
@@ -24,7 +26,7 @@ namespace ConsoleApp1
             Console.WriteLine();
         }
 
-        public void Insert(SqlConnection SqlConnection)
+        public void Insert()
         {
             Console.Write("Wpisz nazwe Firmy: ");
             var NazwaFirmy = Console.ReadLine();
@@ -48,7 +50,7 @@ namespace ConsoleApp1
 
 
         }
-        public void Update(SqlConnection SqlConnection)
+        public void Update()
         {
             Console.Write("Wpisz nazwe Fimry którą chcesz edytowac: ");
             var NazwaFirmy = Console.ReadLine();
@@ -76,7 +78,7 @@ namespace ConsoleApp1
         }
 
 
-        public void Delete(SqlConnection SqlConnection)
+        public void Delete()
         {
 
             Console.Write("Wpisz nazwe Fimry którą chcesz usunąć: ");
@@ -89,19 +91,19 @@ namespace ConsoleApp1
             Console.WriteLine("Delete Succes");
 
         }
-        public static void SQLConnectOpen(SqlConnection SqlConnection)
+        public void SQLConnectOpen()
         {
             SqlConnection.Open();
         }
-        public static void SQLConnectClose(SqlConnection SqlConnection)
+        public void SQLConnectClose()
         {
             SqlConnection.Close();
         }
-        public static SqlConnection SQLConnection()
+        public void SQLConnection()
         {
             string connectionSTring = @"Data Source=DESKTOP-9SL4PUT;Initial Catalog=ZNorthwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=True";
-            var SqlConnection = new SqlConnection(connectionSTring);
-            return SqlConnection;
+            SqlConnection = new SqlConnection(connectionSTring);
+
         }
     }
 }

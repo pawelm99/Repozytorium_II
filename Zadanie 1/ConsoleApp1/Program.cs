@@ -9,14 +9,15 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-            using var SqlConnection = DBCrud.SQLConnection();
-            DBCrud.SQLConnectOpen(SqlConnection);
+
             DBCrud dBCrud = new DBCrud();
-            dBCrud.Read(SqlConnection);
-            dBCrud.Insert(SqlConnection);
-            dBCrud.Update(SqlConnection);
-            dBCrud.Delete(SqlConnection);
-            DBCrud.SQLConnectClose(SqlConnection);
+            dBCrud.SQLConnection();
+            dBCrud.SQLConnectOpen();
+            dBCrud.Read();
+            dBCrud.Insert();
+            dBCrud.Update();
+            dBCrud.Delete();
+            dBCrud.SQLConnectClose();
 
 
 
