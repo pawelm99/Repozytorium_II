@@ -13,7 +13,7 @@ namespace ConsoleApp14
         public DbSet<MyUsers> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
-            var pollInterval = ConfigurationManager.AppSettings["pollInterval"];
+      
             dbContextOptionsBuilder.UseSqlServer(new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString));
             base.OnConfiguring(dbContextOptionsBuilder);
         }
