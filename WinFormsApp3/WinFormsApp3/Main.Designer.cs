@@ -138,9 +138,9 @@ namespace WinFormsApp3
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(199, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(339, 25);
+            this.label2.Size = new System.Drawing.Size(331, 25);
             this.label2.TabIndex = 2;
-            this.label2.Text = "System oszczegania przed powodzią ";
+            this.label2.Text = "System ostrzegania przed powodzią";
             // 
             // Main
             // 
