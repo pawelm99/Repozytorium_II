@@ -53,8 +53,8 @@ namespace WinFormsApp3
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var form5 = new Ostrzeganie();
-            form5.ShowDialog();
+            //var form5 = new Ostrzeganie();
+            //form5.ShowDialog();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

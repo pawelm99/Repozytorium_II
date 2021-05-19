@@ -13,8 +13,7 @@ namespace WinFormsApp3.Models
         }
 
         public double PoziomWody { get; set; }
-        public string Miasto { get; set; }
-        public DateTime Data { get; set; }
+        public DateTime DataPomiaru { get; set; }
         public double StandardowyPoziom { get; set; }
         public string NazwaRzeki { get; set; }
 

@@ -21,10 +21,12 @@ namespace WinFormsApp3.Models
         public virtual DbSet<ObszarZagrozony> ObszarZagrozonies { get; set; }
         public virtual DbSet<ObszaryZalewowe> ObszaryZalewowes { get; set; }
         public virtual DbSet<OstrzeganieInstytucji> OstrzeganieInstytucjis { get; set; }
+        public virtual DbSet<PomiarMiejscowosc> PomiarMiejscowoscs { get; set; }
         public virtual DbSet<PomiarRzeki> PomiarRzekis { get; set; }
         public virtual DbSet<PowiadomienieSm> PowiadomienieSms { get; set; }
         public virtual DbSet<PowodzieHistoryczne> PowodzieHistorycznes { get; set; }
         public virtual DbSet<PrognozaPogody> PrognozaPogodies { get; set; }
+        public virtual DbSet<Widok> Widoks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -151,6 +153,37 @@ namespace WinFormsApp3.Models
                     .HasConstraintName("Miejscowosc");
             });
 
+            modelBuilder.Entity<PomiarMiejscowosc>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("PomiarMiejscowosc");
+
+                entity.Property(e => e.Data).HasColumnType("date");
+
+                entity.Property(e => e.DataPomiaru).HasColumnType("date");
+
+                entity.Property(e => e.Miasto)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Miejscowosc)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.NazwaRzeki)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SluzbaRatunkowa)
+                    .IsRequired()
+                    .HasMaxLength(40)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<PomiarRzeki>(entity =>
             {
                 entity.HasKey(e => e.NazwaRzeki)
@@ -162,12 +195,7 @@ namespace WinFormsApp3.Models
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Data).HasColumnType("date");
-
-                entity.Property(e => e.Miasto)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
+                entity.Property(e => e.DataPomiaru).HasColumnType("date");
             });
 
             modelBuilder.Entity<PowiadomienieSm>(entity =>
@@ -240,6 +268,35 @@ namespace WinFormsApp3.Models
                 entity.Property(e => e.RodzajPogody)
                     .IsRequired()
                     .HasMaxLength(10)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Widok>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("widok");
+
+                entity.Property(e => e.Data).HasColumnType("date");
+
+                entity.Property(e => e.Miasto)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Miejscowosc)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.NazwaRzeki)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.SluzbaRatunkowa)
+                    .IsRequired()
+                    .HasMaxLength(40)
                     .IsUnicode(false);
             });
 
