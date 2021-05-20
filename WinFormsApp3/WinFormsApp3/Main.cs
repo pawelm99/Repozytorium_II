@@ -67,12 +67,44 @@ namespace WinFormsApp3
 
         }
 
+        
         private void Main_Load(object sender, EventArgs e)
         {
+            
             label3.Text = DateTime.Now.ToString("d");
+            menuStrip1.Items.Add(Name = "About",null,One_clickHelpMetod);
+
+
+
+        }
+
+        private void One_clickHelpMetod(object sender, EventArgs e)
+        {
+            var formText = new FormText();
+            formText.ShowDialog();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked_2(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
