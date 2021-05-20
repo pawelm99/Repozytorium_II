@@ -71,5 +71,10 @@ namespace WinFormsApp3
         {
             label3.Text = DateTime.Now.ToString("d");
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

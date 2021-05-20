@@ -12,17 +12,18 @@ namespace WinFormsApp3
 {
     public partial class Analiza : Form
     {
-        private int iloscZagrozonychObszarow; //???
+        private int iloscZagrozonychObszarow;
         private int selectedIndexlistBox; 
         public Analiza()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             var baza = new Baza();
-            var collction = baza.BaseGetMeasureData();
+            var collction = await baza.BaseGetMeasureData();
+            progressBar1.Value = 25;
             var text2 =  collction.Select(x => x);
             foreach (var item in text2)
             {
@@ -34,13 +35,13 @@ namespace WinFormsApp3
                 listBox6.Items.Add($"{item.StandardowyPoziom.ToString()}");
 
             }
-
+            progressBar1.Value = 100;
             if (text2.Count() >= 1)
             {
                 
                 iloscZagrozonychObszarow = text2.Count();
             }
-
+            
             button1.Enabled = false;
         }
 
@@ -62,7 +63,8 @@ namespace WinFormsApp3
             label5.Text = "Miejscowosc";
             label6.Text = "PoziomWody";
             label7.Text = "StandardowyPoziom";
-            
+          
+
         }
         void AllIndex(int index)
         {
@@ -74,6 +76,7 @@ namespace WinFormsApp3
             listBox6.SelectedIndex = index;
             button2.Enabled = true;
             selectedIndexlistBox  = index;
+            
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -121,6 +124,21 @@ namespace WinFormsApp3
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void progressBar1_EnabledChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void process1_Exited(object sender, EventArgs e)
         {
 
         }

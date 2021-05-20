@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,22 +11,22 @@ namespace WinFormsApp3
 {
     class Baza
     {
-        public string BaseGetTownship()
+        public async Task<string> BaseGetTownship()
         {
-            var DB = new DBCrudDapper(@"Data Source=DESKTOP-9SL4PUT;Initial Catalog=MBaza;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            var DB = new DBCrudDapper(ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString);
             var text = new StringBuilder();
-            foreach (var obszar in DB.GetArea())
+            foreach (var obszar in await DB.GetArea())
             {
                 text.AppendLine(obszar.Miejscowosc);
             }
             return text.ToString();
             
         }
-        public string BaseGetCity()
+        public async Task<string> BaseGetCity()
         {
-            var DB = new DBCrudDapper(@"Data Source=DESKTOP-9SL4PUT;Initial Catalog=MBaza;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            var DB = new DBCrudDapper(ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString);
             var text = new StringBuilder();
-            foreach (var obszar in DB.GetArea())
+            foreach (var obszar in await DB.GetArea())
             {
                 text.AppendLine(obszar.Miasto);
             }
@@ -32,12 +34,12 @@ namespace WinFormsApp3
 
         }
 
-        public IEnumerable<PomiarMiejscowosc> BaseGetMeasureData()
+        public async Task<IEnumerable<PomiarMiejscowosc>> BaseGetMeasureData()
         {
-            var DB = new DBCrudDapper(@"Data Source=DESKTOP-9SL4PUT;Initial Catalog=MBaza;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            var DB = new DBCrudDapper(ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString);
             var text = new StringBuilder();
             var collection = DB.GetAreaEndangered();
-            return collection;
+            return await collection;
 
         }
 

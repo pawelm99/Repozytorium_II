@@ -15,16 +15,17 @@ namespace WinFormsApp3
         private IDbConnection _connection;
         public DBCrudDapper(string ConnectionString)
         {
-            _connection = new SqlConnection(ConnectionString);
+               _connection = new SqlConnection(ConnectionString);
+
 
         }
-        public IEnumerable<ObszarZagrozony> GetArea()
+        public async Task<IEnumerable<ObszarZagrozony>> GetArea()
         {
-            return _connection.Query<ObszarZagrozony>("SELECT * FROM dane.ObszarZagrozony");
+            return  await _connection.QueryAsync<ObszarZagrozony>("SELECT * FROM dane.ObszarZagrozony");
         } 
-        public IEnumerable<PomiarMiejscowosc> GetAreaEndangered()
+        public async Task<IEnumerable<PomiarMiejscowosc>> GetAreaEndangered()
         {
-            return _connection.Query<PomiarMiejscowosc>("SELECT * FROM dbo.PomiarMiejscowosc WHERE PoziomWody > StandardowyPoziom");
+            return await _connection.QueryAsync<PomiarMiejscowosc>("SELECT * FROM dbo.PomiarMiejscowosc WHERE PoziomWody > StandardowyPoziom");
         }
 
        

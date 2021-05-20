@@ -35,10 +35,11 @@ namespace WinFormsApp3
             form.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             var baza = new Baza();
-            var BaseTownShip = baza.BaseGetTownship();
+            progressBar1.Value = 25;
+            var BaseTownShip =  await baza.BaseGetTownship();
             var formFindResoult = new FindFuctionView();
 
             if (!string.IsNullOrEmpty(textBox1.Text))
@@ -55,6 +56,7 @@ namespace WinFormsApp3
 
                     formFindResoult.label1.Text = $"Nie znaleziono: {textBox1.Text}"; ;
                 }
+                progressBar1.Value = 100;
                 formFindResoult.ShowDialog();
             }
             

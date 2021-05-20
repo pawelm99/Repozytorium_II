@@ -13,7 +13,7 @@ namespace WinFormsApp3.EF_Core
     {
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
-            var pollInterval = ConfigurationManager.AppSettings["pollInterval"];
+            
             dbContextOptionsBuilder.UseSqlServer(new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString));
             base.OnConfiguring(dbContextOptionsBuilder);
         }

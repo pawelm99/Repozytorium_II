@@ -29,6 +29,7 @@ namespace WinFormsApp3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DodajObszar));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -67,7 +68,6 @@ namespace WinFormsApp3
             this.progressBar1.Size = new System.Drawing.Size(624, 23);
             this.progressBar1.Step = 25;
             this.progressBar1.TabIndex = 2;
-            this.progressBar1.Value = 25;
             // 
             // label3
             // 
@@ -87,6 +87,7 @@ namespace WinFormsApp3
             this.button1.TabIndex = 4;
             this.button1.Text = "Obszar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -141,6 +142,7 @@ namespace WinFormsApp3
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DodajObszar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj obszar";

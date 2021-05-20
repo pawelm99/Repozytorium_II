@@ -20,10 +20,10 @@ namespace WinFormsApp3
             InitializeComponent();
         }
 
-        private void Ostrzeganie_Load(object sender, EventArgs e)
+        private async void Ostrzeganie_Load(object sender, EventArgs e)
         {
             var baza = new Baza();
-            var collction = baza.BaseGetMeasureData();
+            var collction = await baza.BaseGetMeasureData();
             var text2 = collction.Select(x => x).ToArray();
             if (text2[index].SluzbaRatunkowa.IndexOf("Szpital") >= 0)
             {
@@ -91,6 +91,9 @@ namespace WinFormsApp3
             form.label1.Location = new Point(0,41);
             form.label1.Text = $"Powiadomienie wysłane do: {Sluzby}";
             form.ShowDialog();
+            button1.Enabled = false;
+            Close();
+
             
         }
     }
