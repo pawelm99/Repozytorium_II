@@ -35,7 +35,6 @@ namespace WinFormsApp3
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -100,21 +99,14 @@ namespace WinFormsApp3
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 210);
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(13, 235);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(599, 40);
             this.button1.TabIndex = 2;
             this.button1.Text = "Powiadom wybrane";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(13, 256);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(599, 44);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Powiadom wszystkich";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -142,13 +134,14 @@ namespace WinFormsApp3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(631, 321);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "Ostrzeganie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form5";
             this.Load += new System.EventHandler(this.Ostrzeganie_Load);
             this.panel1.ResumeLayout(false);
@@ -166,7 +159,6 @@ namespace WinFormsApp3
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
     }

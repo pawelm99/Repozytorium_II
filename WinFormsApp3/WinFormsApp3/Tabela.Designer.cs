@@ -92,6 +92,7 @@ namespace WinFormsApp3
             this.ClientSize = new System.Drawing.Size(242, 283);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Tabela";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tabela";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();

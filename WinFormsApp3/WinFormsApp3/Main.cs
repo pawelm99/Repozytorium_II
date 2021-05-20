@@ -15,7 +15,7 @@ namespace WinFormsApp3
         public Main()
         {
             InitializeComponent();
-            textBox1.Text = DateTime.Now.Date.ToString();
+           
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -60,6 +60,16 @@ namespace WinFormsApp3
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            label3.Text = DateTime.Now.ToString("d");
         }
     }
 }

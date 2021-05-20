@@ -37,11 +37,11 @@ namespace WinFormsApp3
 
             if (text2.Count() >= 1)
             {
-                button2.Enabled = true;
+                
                 iloscZagrozonychObszarow = text2.Count();
             }
-           
 
+            button1.Enabled = false;
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -72,6 +72,7 @@ namespace WinFormsApp3
             listBox4.SelectedIndex = index;
             listBox5.SelectedIndex = index;
             listBox6.SelectedIndex = index;
+            button2.Enabled = true;
             selectedIndexlistBox  = index;
         }
         private void button2_Click(object sender, EventArgs e)

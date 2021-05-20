@@ -13,6 +13,7 @@ namespace WinFormsApp3
     public partial class Ostrzeganie : Form
     {
         private int index;
+        private string Sluzby;
         public Ostrzeganie(int ilosc)
         {
             this.index = ilosc;
@@ -42,7 +43,8 @@ namespace WinFormsApp3
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            funEnableButton1();
+            Sluzby += $"{checkBox1.Text}, ";
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -62,17 +64,34 @@ namespace WinFormsApp3
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-
+            funEnableButton1();
+            Sluzby += $"{checkBox2.Text}, ";
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
+            funEnableButton1();
+            Sluzby += $"{checkBox3.Text}, ";
 
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
+            funEnableButton1();
+            Sluzby += $"{checkBox4.Text}, ";
+        }
 
+        void funEnableButton1()
+        {
+            button1.Enabled = true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new FindFuctionView();
+            form.label1.Location = new Point(0,41);
+            form.label1.Text = $"Powiadomienie wysłane do: {Sluzby}";
+            form.ShowDialog();
+            
         }
     }
 }

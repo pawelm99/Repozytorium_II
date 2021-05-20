@@ -24,8 +24,10 @@ namespace WinFormsApp3
         } 
         public IEnumerable<PomiarMiejscowosc> GetAreaEndangered()
         {
-            return _connection.Query<PomiarMiejscowosc>("SELECT * FROM dbo.PomiarMiejscowosc");
+            return _connection.Query<PomiarMiejscowosc>("SELECT * FROM dbo.PomiarMiejscowosc WHERE PoziomWody > StandardowyPoziom");
         }
+
+       
 
     }
 }

@@ -130,6 +130,7 @@ namespace WinFormsApp3
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(664, 331);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -141,6 +142,7 @@ namespace WinFormsApp3
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DodajObszar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj obszar";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
