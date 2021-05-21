@@ -32,7 +32,7 @@ namespace WinFormsApp3
         private void button1_Click(object sender, EventArgs e)
         {
             
-            errorProvider1.SetError(button1, "Realizacja w dalszym projekcie");
+            errorProvider1.SetError(button1, "Realizacja w drugim projekcie");
             EventHandler eventHandler = errorTime;
             eventHandler?.Invoke(this, e);
             //var form1 = new AddRegion();

@@ -38,6 +38,7 @@ namespace WinFormsApp3
             // 
             // label1
             // 
+            this.label1.AutoEllipsis = true;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(139, 43);
             this.label1.Name = "label1";

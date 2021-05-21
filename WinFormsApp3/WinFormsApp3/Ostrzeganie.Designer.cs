@@ -29,6 +29,7 @@ namespace WinFormsApp3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ostrzeganie));
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -38,7 +39,9 @@ namespace WinFormsApp3
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -131,6 +134,10 @@ namespace WinFormsApp3
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Ostrzeganie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -148,6 +155,7 @@ namespace WinFormsApp3
             this.Load += new System.EventHandler(this.Ostrzeganie_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +171,6 @@ namespace WinFormsApp3
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

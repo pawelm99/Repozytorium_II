@@ -36,6 +36,9 @@ namespace WinFormsApp3
             var baza = new Baza();
             var collction = await baza.BaseGetMeasureData();
             var text2 = collction.Select(x => x).ToArray();
+            errorProvider1.SetError(checkBox4, "Realizowane w drugim projekcie");
+            errorProvider1.RightToLeft = true;
+            checkBox4.Enabled = false;
             if (text2[index].SluzbaRatunkowa.IndexOf("Szpital") >= 0)
             {
                 checkBox2.Enabled = true;
