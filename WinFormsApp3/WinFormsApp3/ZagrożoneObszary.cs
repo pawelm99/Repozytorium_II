@@ -12,19 +12,26 @@ namespace WinFormsApp3
 {
     public partial class ZagrożoneObszary : Form
     {
-        private int iloscZagrozonychObszarow;
+        
         private int selectedIndexlistBox; 
         public ZagrożoneObszary()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Czyta z bazy obszary zagrożone. 
+        /// Wypisuje w listBoxie po czym wyłącza 
+        /// button1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void button1_Click(object sender, EventArgs e)
         {
             var baza = new Baza();
             var collction = await baza.BaseGetMeasureData();
             progressBar1.Value = 25;
             var text2 =  collction.Select(x => x);
+
             foreach (var item in text2)
             {
                 listBox1.Items.Add($"{item.DataPomiaru.ToString("d")}");
@@ -36,24 +43,11 @@ namespace WinFormsApp3
 
             }
             progressBar1.Value = 100;
-            if (text2.Count() >= 1)
-            {
-                
-                iloscZagrozonychObszarow = text2.Count();
-            }
             
             button1.Enabled = false;
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void Analiza_Load(object sender, EventArgs e)
         {
@@ -66,6 +60,10 @@ namespace WinFormsApp3
           
 
         }
+        /// <summary>
+        /// Funkcja synchronizuje zaznaczanie tekstu
+        /// </summary>
+        /// <param name="index"></param>
         void AllIndex(int index)
         {
             listBox1.SelectedIndex = index;
@@ -78,6 +76,13 @@ namespace WinFormsApp3
             selectedIndexlistBox  = index;
             
         }
+        /// <summary>
+        /// selectedIndexlistBox jest przekazywany do następnego
+        /// formularza który pokazuje który wybraliśmy obszar do 
+        /// powiadomienia
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             var form5 = new Ostrzeganie(selectedIndexlistBox);
@@ -85,17 +90,19 @@ namespace WinFormsApp3
             //form5.listBox1.Items.Add(richTextBox1.Text);
             form5.ShowDialog();
         }
-
+        /// <summary>
+        /// Przekazywanie do funkcji ALLIndex 
+        /// który index został przez nas kliknięty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             AllIndex(listBox1.SelectedIndex);
         }
 
-        private void listBox1_Click(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -111,7 +118,7 @@ namespace WinFormsApp3
         {
             AllIndex(listBox5.SelectedIndex);
         }
-        
+
 
         private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -122,7 +129,10 @@ namespace WinFormsApp3
         {
             AllIndex(listBox6.SelectedIndex);
         }
+        private void listBox1_Click(object sender, EventArgs e)
+        {
 
+        }
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -139,6 +149,15 @@ namespace WinFormsApp3
         }
 
         private void process1_Exited(object sender, EventArgs e)
+        {
+
+        }
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

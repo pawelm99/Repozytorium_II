@@ -18,6 +18,13 @@ namespace WinFormsApp3
           
         }
 
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -25,7 +32,7 @@ namespace WinFormsApp3
 
         private void FindFuctionView_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -36,11 +43,6 @@ namespace WinFormsApp3
         private void label1_Click_1(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

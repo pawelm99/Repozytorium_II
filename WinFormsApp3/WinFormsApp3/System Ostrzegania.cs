@@ -20,35 +20,36 @@ namespace WinFormsApp3
            
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
+    
+        /// <summary>
+        /// Ustawienie eventu jeśli klikniemy button1
+        /// Podpięcie eventu errorTime
+        /// Kontrolka będzie realizowana w dalszym projekcie 
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             
             errorProvider1.SetError(button1, "Realizacja w dalszym projekcie");
-            EventHandler eventHandler = error;
+            EventHandler eventHandler = errorTime;
             eventHandler?.Invoke(this, e);
             //var form1 = new AddRegion();
             //form1.ShowDialog();
         }
-        private async void error(object sender, EventArgs e)
+        /// <summary>
+        /// errorTime odlicza czas po czym kasuje zdarzenie errorProvider1
+        /// Metoda async nie blokuje aplikacji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void errorTime(object sender, EventArgs e)
         {
            await Task.Delay(3000);
             errorProvider1.Clear();
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
             var form2= new WspieraneObszary();
@@ -67,16 +68,7 @@ namespace WinFormsApp3
             //form5.ShowDialog();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+  
         
         private void Main_Load(object sender, EventArgs e)
         {
@@ -92,6 +84,15 @@ namespace WinFormsApp3
         {
             var formText = new AboutText();
            formText.ShowDialog();
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -122,6 +123,20 @@ namespace WinFormsApp3
         private void Main_Click(object sender, EventArgs e)
         {
             
+        }
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

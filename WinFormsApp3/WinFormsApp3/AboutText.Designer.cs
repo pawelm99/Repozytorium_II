@@ -71,6 +71,7 @@ namespace WinFormsApp3
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "AboutText";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AboutText";
             this.Load += new System.EventHandler(this.FormText_Load);
             this.panel1.ResumeLayout(false);

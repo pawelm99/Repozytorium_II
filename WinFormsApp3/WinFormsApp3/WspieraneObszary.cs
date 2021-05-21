@@ -18,15 +18,7 @@ namespace WinFormsApp3
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -34,11 +26,17 @@ namespace WinFormsApp3
             var form = new Tabela();
             form.ShowDialog();
         }
-
+        /// <summary>
+        /// Szuka w bazie frazy wyszukania po czym tworzy formularz
+        /// z wynikem wyszukania
+        /// Ustawia errorProvidera jeśli nie wpiszemy tekstu
+        /// /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void button1_Click(object sender, EventArgs e)
         {
             
-
+            
             if (!string.IsNullOrEmpty(textBox1.Text))
             {
                 var baza = new Baza();
@@ -81,6 +79,15 @@ namespace WinFormsApp3
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
           
+
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

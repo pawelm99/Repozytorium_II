@@ -17,6 +17,29 @@ namespace WinFormsApp3
             InitializeComponent();
        
         }
+        /// <summary>
+        /// Async metoda ładowania danych z bazy. 
+        /// Mijescowosc oraz Miasto 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void Tabela_Load(object sender, EventArgs e)
+        {
+            var Baza = new Baza();
+
+            textBox1.Text = "Miejscowosc";
+            textBox2.Text = "Miasto";
+            progressBar1.Value = 25;
+            richTextBox1.Text = await Baza.BaseGetTownship();
+            richTextBox2.Text = await Baza.BaseGetCity();
+            progressBar1.Value = 100;
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -48,21 +71,5 @@ namespace WinFormsApp3
 
         }
 
-        private async void Tabela_Load(object sender, EventArgs e)
-        {
-            var Baza = new Baza();
-
-            textBox1.Text = "Miejscowosc";
-            textBox2.Text = "Miasto";
-            progressBar1.Value = 25;
-            richTextBox1.Text = await Baza.BaseGetTownship();
-            richTextBox2.Text = await Baza.BaseGetCity();
-            progressBar1.Value = 100;
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

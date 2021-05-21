@@ -14,12 +14,23 @@ namespace WinFormsApp3
     {
         private int index;
         private string Sluzby;
+        /// <summary>
+        /// Formularz przyjmuje numer pozycji wiersza którego zaznaczyliśmy.
+        /// </summary>
+        /// <param name="ilosc"></param>
         public Ostrzeganie(int ilosc)
         {
             this.index = ilosc;
             InitializeComponent();
         }
 
+         /// <summary>
+         /// Następuje tutaj wyszukanie w bazie jaką służbę ratunkową posiada dany obszar.
+         /// Jeśli posiada checkBox zostanie odblokwoany
+         /// </summary>
+         /// <param name="sender"></param>
+         /// <param name="e"></param>
+         
         private async void Ostrzeganie_Load(object sender, EventArgs e)
         {
             var baza = new Baza();
@@ -40,6 +51,13 @@ namespace WinFormsApp3
 
 
         }
+        /// <summary>
+        /// Odblokuje przycisk jeśli zaznaczymy checkBoxa
+        /// </summary>
+        void funEnableButton1()
+        {
+            button1.Enabled = true;
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -47,20 +65,7 @@ namespace WinFormsApp3
             Sluzby += $"{checkBox1.Text}, ";
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+ 
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
@@ -81,10 +86,11 @@ namespace WinFormsApp3
             Sluzby += $"{checkBox4.Text}, ";
         }
 
-        void funEnableButton1()
-        {
-            button1.Enabled = true;
-        }
+       /// <summary>
+       /// Utworzenie nowego formularza oraz wyświetlenie 
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             var form = new WynikWyszukania();
@@ -95,6 +101,21 @@ namespace WinFormsApp3
             Close();
 
             
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
