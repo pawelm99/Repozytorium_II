@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -38,11 +39,16 @@ namespace WinFormsApp3
         {
             
             errorProvider1.SetError(button1, "Realizacja w dalszym projekcie");
-            button1.Enabled = false;
+            EventHandler eventHandler = error;
+            eventHandler?.Invoke(this, e);
             //var form1 = new AddRegion();
             //form1.ShowDialog();
         }
-
+        private async void error(object sender, EventArgs e)
+        {
+           await Task.Delay(3000);
+            errorProvider1.Clear();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             var form2= new WspieraneObszary();
@@ -77,7 +83,7 @@ namespace WinFormsApp3
             
             label3.Text = DateTime.Now.ToString("d");
             menuStrip1.Items.Add(Name = "About",null,One_clickHelpMetod);
-
+            
 
 
         }
