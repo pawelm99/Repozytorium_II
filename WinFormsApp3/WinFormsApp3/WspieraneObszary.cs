@@ -37,34 +37,43 @@ namespace WinFormsApp3
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            var baza = new Baza();
-            progressBar1.Value = 25;
-            var BaseTownShip =  await baza.BaseGetTownship();
-            var formFindResoult = new FindFuctionView();
+            
 
             if (!string.IsNullOrEmpty(textBox1.Text))
             {
+                var baza = new Baza();
+                progressBar1.Value = 25;
+                var BaseTownShip = await baza.BaseGetTownship();
+                var formFindResoult = new WynikWyszukania();
+
+
                 var resoult = BaseTownShip.IndexOf(textBox1.Text, 0);
                 if (resoult >= 0)
                 {
-
+                    progressBar1.Value = 100;
                     formFindResoult.label1.Text = $"Znaleziono: {textBox1.Text}";
+                    
 
                 }
                 else if (resoult == -1)
                 {
-
+                    progressBar1.Value = 100;
                     formFindResoult.label1.Text = $"Nie znaleziono: {textBox1.Text}"; ;
+                    
                 }
-                progressBar1.Value = 100;
+                progressBar1.Value = 0;
                 formFindResoult.ShowDialog();
+            }
+            else
+            {
+                errorProvider1.SetError(textBox1,"Wpisz tekst");
             }
             
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-         
+            errorProvider1.Clear();
             
            
         }

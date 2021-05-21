@@ -144,7 +144,7 @@ namespace WinFormsApp3
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Ostrzeganie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form5";
+            this.Text = "Ostrzeganie";
             this.Load += new System.EventHandler(this.Ostrzeganie_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -87,7 +87,7 @@ namespace WinFormsApp3
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            var form = new FindFuctionView();
+            var form = new WynikWyszukania();
             form.label1.Location = new Point(0,41);
             form.label1.Text = $"Powiadomienie wysłane do: {Sluzby}";
             form.ShowDialog();
