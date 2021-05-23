@@ -40,9 +40,10 @@ namespace Zadanie5_WinForms
         private void button1_Click(object sender, EventArgs e)
         {
            
-            user.Nazwa = NazwaU;
-            if ((HasloU == PowtorzHasloU) && (checkBox1.Checked == true))
+            
+            if ((NazwaU != null) && (HasloU == PowtorzHasloU) && (checkBox1.Checked == true) && (null != HasloU))
             {
+                user.Nazwa = NazwaU;
                 user.Hasło = HasloU;
                 var form = new Message();
                 form.StartPosition = FormStartPosition.CenterScreen;
@@ -53,6 +54,14 @@ namespace Zadanie5_WinForms
             else if (checkBox1.Checked == false)
             {
                 errorProvider1.SetError(checkBox1, "Musisz potwierdzić");
+            }
+            else if(null == HasloU)
+            {
+                errorProvider1.SetError(textBox2, "Hasło Puste");
+            }
+            else if (null == NazwaU)
+            {
+                errorProvider1.SetError(textBox1, "Login Puste");
             }
             else 
             {
@@ -80,7 +89,7 @@ namespace Zadanie5_WinForms
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             
-            HasloU = textBox2.Text;
+            
             errorProvider1.Clear();
             if (textBox2.Text.Length >= 4)
             {
