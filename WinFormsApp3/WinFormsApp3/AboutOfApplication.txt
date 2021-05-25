@@ -1,7 +1,0 @@
-System ostrzegania przed powodzią
-O aplikacji:
-Aplikacja kożysta z bazy danych w sposób asynchroniczny ( funckje await oraz Task). Został tutaj użyty Dapper do wyświetlania oraz migracja z dotnet cora. 
-Aplikacja umożwiliwa wyświetlenie obszarów które są wspierane czyli wpisane w baze danych. Możliwe jest także sprawdzenie czy podana miejscowosc znajduje sie w bazie dancyh.
-Formularz analiza wyświetla obszary zagrożone powodzią przez sprawdzenie poziomu wody miejscowej rzeki. Rzeki które przekraczają normę zostają wypisane w tabeli.
-Możemy powiadomić wybraną miejscowość. Klikając powiadom aplikacja sprawdza w bazie jakie służby ratunkowe posiada dany obszar. Jeśli służba ratunkowa znajduje się w danej miescowości 
-będzie możliwa do powiadomienia.

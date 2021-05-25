@@ -20,7 +20,7 @@ namespace WinFormsApp3
 
         private void FormText_Load(object sender, EventArgs e)
         {
-            richTextBox1.Text = File.ReadAllText(@"C:\Users\pawel\source\repos\WinFormsApp3\WinFormsApp3\AboutOfApplication.txt");
+            richTextBox1.Text = File.ReadAllText("AboutOfApplication.txt");
             
             
         }
