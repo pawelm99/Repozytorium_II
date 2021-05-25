@@ -95,7 +95,7 @@ namespace WinFormsApp3
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(214, 275);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(187, 276);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(331, 57);
             this.flowLayoutPanel1.TabIndex = 6;
@@ -134,7 +134,7 @@ namespace WinFormsApp3
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(214, 0);
+            this.label2.Location = new System.Drawing.Point(187, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(331, 25);
             this.label2.TabIndex = 2;
