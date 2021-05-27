@@ -76,7 +76,6 @@ namespace WinFormsApp3
             this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "label2";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -142,7 +141,7 @@ namespace WinFormsApp3
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(101, 319);
             this.listBox1.TabIndex = 15;
-            this.listBox1.Click += new System.EventHandler(this.listBox1_Click);
+
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
@@ -204,8 +203,6 @@ namespace WinFormsApp3
             this.progressBar1.Size = new System.Drawing.Size(98, 13);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 21;
-            this.progressBar1.EnabledChanged += new System.EventHandler(this.progressBar1_EnabledChanged);
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // ZagrożoneObszary
             // 

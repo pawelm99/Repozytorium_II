@@ -57,7 +57,6 @@ namespace WinFormsApp3
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // textBox2
             // 
@@ -66,7 +65,6 @@ namespace WinFormsApp3
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 23);
             this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // richTextBox1
             // 
@@ -76,7 +74,6 @@ namespace WinFormsApp3
             this.richTextBox1.Size = new System.Drawing.Size(100, 227);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
             // 
             // richTextBox2
             // 
@@ -95,7 +92,6 @@ namespace WinFormsApp3
             this.progressBar1.Size = new System.Drawing.Size(98, 13);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 23;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // Tabela
             // 

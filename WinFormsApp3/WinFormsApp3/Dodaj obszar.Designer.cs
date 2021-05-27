@@ -87,7 +87,6 @@ namespace WinFormsApp3
             this.button1.TabIndex = 4;
             this.button1.Text = "Obszar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -124,7 +123,7 @@ namespace WinFormsApp3
             this.button5.TabIndex = 8;
             this.button5.Text = "Dodaj";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+
             // 
             // DodajObszar
             // 
@@ -146,7 +145,6 @@ namespace WinFormsApp3
             this.Name = "DodajObszar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj obszar";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

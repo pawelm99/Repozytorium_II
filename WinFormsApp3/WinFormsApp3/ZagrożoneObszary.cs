@@ -129,37 +129,5 @@ namespace WinFormsApp3
         {
             AllIndex(listBox6.SelectedIndex);
         }
-        private void listBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void progressBar1_EnabledChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void process1_Exited(object sender, EventArgs e)
-        {
-
-        }
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

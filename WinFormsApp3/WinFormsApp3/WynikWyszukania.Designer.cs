@@ -45,7 +45,6 @@ namespace WinFormsApp3
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "resoult";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // button1
             // 
@@ -78,7 +77,6 @@ namespace WinFormsApp3
             this.Name = "WynikWyszukania";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WynikWyszukania";
-            this.Load += new System.EventHandler(this.FindFuctionView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
