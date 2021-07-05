@@ -43,7 +43,17 @@ namespace WinFormsApp3
 
         }
 
+        public async Task<List<string>> BaseGetTownshipList()
+        {
+            var DB = new DBCrudDapper(ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString);
+            List<String>list = new List<String>();
+            foreach (var obszar in await DB.GetArea())
+            {
+                list.Add(obszar.Miejscowosc);
+            }
+            return list;
 
+        }
 
     }
 }

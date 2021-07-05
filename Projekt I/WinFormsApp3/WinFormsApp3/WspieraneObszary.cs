@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace WinFormsApp3
 {
@@ -40,26 +41,26 @@ namespace WinFormsApp3
             if (!string.IsNullOrEmpty(textBox1.Text))
             {
                 var baza = new Baza();
-                progressBar1.Value = 25;
-                var BaseTownShip = await baza.BaseGetTownship();
+                var BaseTownShip = await baza.BaseGetTownshipList();
                 var formFindResoult = new WynikWyszukania();
-
-
-                var resoult = BaseTownShip.IndexOf(textBox1.Text, 0);
-                if (resoult >= 0)
+           
+                var resoult  = BaseTownShip.Contains(textBox1.Text);
+                    
+               
+                if (resoult == true)
                 {
-                    progressBar1.Value = 100;
+                    
                     formFindResoult.label1.Text = $"Znaleziono: {textBox1.Text}";
                     
 
                 }
-                else if (resoult == -1)
+                else if (resoult == false)
                 {
-                    progressBar1.Value = 100;
+                    
                     formFindResoult.label1.Text = $"Nie znaleziono: {textBox1.Text}"; ;
                     
                 }
-                progressBar1.Value = 0;
+                
                 formFindResoult.ShowDialog();
             }
             else
@@ -72,8 +73,6 @@ namespace WinFormsApp3
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             errorProvider1.Clear();
-            
-           
         }
 
     }

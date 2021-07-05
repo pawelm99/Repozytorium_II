@@ -21,23 +21,6 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="F:WinFormsApp3.AddRegion.components">
-            <summary>
-             Required designer variable.
-            </summary>
-        </member>
-        <member name="M:WinFormsApp3.AddRegion.Dispose(System.Boolean)">
-            <summary>
-             Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:WinFormsApp3.AddRegion.InitializeComponent">
-            <summary>
-             Required method for Designer support - do not modify
-             the contents of this method with the code editor.
-            </summary>
-        </member>
         <member name="M:WinFormsApp3.Ostrzeganie.#ctor(System.Int32)">
             <summary>
             Formularz przyjmuje numer pozycji wiersza którego zaznaczyliśmy.
@@ -205,7 +188,7 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:WinFormsApp3.ZagrożoneObszary.button1_Click(System.Object,System.EventArgs)">
+        <member name="M:WinFormsApp3.ZagrożoneObszary.Analiza_Load(System.Object,System.EventArgs)">
             <summary>
             Czyta z bazy obszary zagrożone. 
             Wypisuje w listBoxie po czym wyłącza 

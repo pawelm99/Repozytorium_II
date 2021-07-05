@@ -21,8 +21,7 @@ namespace WinFormsApp3
         private void FormText_Load(object sender, EventArgs e)
         {
             richTextBox1.Text = File.ReadAllText("AboutOfApplication.txt");
-            
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,14 +29,6 @@ namespace WinFormsApp3
             Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

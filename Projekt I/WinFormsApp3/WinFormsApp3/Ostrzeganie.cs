@@ -13,6 +13,10 @@ namespace WinFormsApp3
     public partial class Ostrzeganie : Form
     {
         private int index;
+        private int Policja;
+        private int Szpital;
+        private int StrażPożarna;
+        private int PowiadomienieSMS;
         private string Sluzby;
         /// <summary>
         /// Formularz przyjmuje numer pozycji wiersza którego zaznaczyliśmy.
@@ -62,31 +66,47 @@ namespace WinFormsApp3
             button1.Enabled = true;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)//poliucja
         {
             funEnableButton1();
-            Sluzby += $"{checkBox1.Text}, ";
+            if (checkBox1.Checked)
+                Policja = 1 ;
+
+            else
+                Policja = 0; ;
         }
 
  
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e) //szpital
         {
             funEnableButton1();
-            Sluzby += $"{checkBox2.Text}, ";
+            if (checkBox2.Checked)
+                Szpital = 1;
+
+            else
+                Szpital = 0; ;
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)//straz
         {
             funEnableButton1();
-            Sluzby += $"{checkBox3.Text}, ";
+            if (checkBox3.Checked)
+                StrażPożarna = 1;
+
+            else
+                StrażPożarna = 0; ;
 
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             funEnableButton1();
-            Sluzby += $"{checkBox4.Text}, ";
+            if (checkBox4.Checked)
+                PowiadomienieSMS = 1;
+
+            else
+                PowiadomienieSMS = 0; ;
         }
 
        /// <summary>
@@ -98,6 +118,9 @@ namespace WinFormsApp3
         {
             var form = new WynikWyszukania();
             form.label1.Location = new Point(0,41);
+            if (Policja == 1) Sluzby += "Policja, ";
+            if (Szpital == 1) Sluzby += "Szpital, ";
+            if (StrażPożarna == 1) Sluzby += "Straż Pożarna, ";
             form.label1.Text = $"Powiadomienie wysłane do: {Sluzby}";
             form.ShowDialog();
             button1.Enabled = false;

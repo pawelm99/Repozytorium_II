@@ -64,8 +64,7 @@ namespace WinFormsApp3
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //var form5 = new Ostrzeganie();
-            //form5.ShowDialog();
+
         }
 
   
@@ -85,58 +84,6 @@ namespace WinFormsApp3
             var formText = new AboutText();
            formText.ShowDialog();
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked_2(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void Main_Click(object sender, EventArgs e)
-        {
-            
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }

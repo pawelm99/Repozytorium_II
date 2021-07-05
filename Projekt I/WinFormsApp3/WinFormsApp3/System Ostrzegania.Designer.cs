@@ -69,7 +69,7 @@ namespace WinFormsApp3
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(693, 347);
             this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+           
             // 
             // label3
             // 
@@ -80,7 +80,7 @@ namespace WinFormsApp3
             this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+          
             // 
             // label4
             // 
@@ -126,7 +126,7 @@ namespace WinFormsApp3
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(102, 53);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Analiza";
+            this.button3.Text = "Zagrożone obszary";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -166,7 +166,7 @@ namespace WinFormsApp3
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "System Ostrzegania";
             this.Load += new System.EventHandler(this.Main_Load);
-            this.Click += new System.EventHandler(this.Main_Click);
+     
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

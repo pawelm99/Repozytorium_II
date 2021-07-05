@@ -29,10 +29,9 @@ namespace WinFormsApp3
 
             textBox1.Text = "Miejscowosc";
             textBox2.Text = "Miasto";
-            progressBar1.Value = 25;
             richTextBox1.Text = await Baza.BaseGetTownship();
             richTextBox2.Text = await Baza.BaseGetCity();
-            progressBar1.Value = 100;
+            
         }
 
 

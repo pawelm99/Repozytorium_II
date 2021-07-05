@@ -25,31 +25,10 @@ namespace WinFormsApp3
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void button1_Click(object sender, EventArgs e)
-        {
-            var baza = new Baza();
-            var collction = await baza.BaseGetMeasureData();
-            progressBar1.Value = 25;
-            var text2 =  collction.Select(x => x);
-
-            foreach (var item in text2)
-            {
-                listBox1.Items.Add($"{item.DataPomiaru.ToString("d")}");
-                listBox2.Items.Add($"{item.Miasto.ToString()}");
-                listBox3.Items.Add($"{item.Miejscowosc.ToString()}");
-                listBox4.Items.Add($"{item.NazwaRzeki.ToString()}");
-                listBox5.Items.Add($"{item.PoziomWody.ToString()}");
-                listBox6.Items.Add($"{item.StandardowyPoziom.ToString()}");
-
-            }
-            progressBar1.Value = 100;
-            
-            button1.Enabled = false;
-        }
 
   
 
-        private void Analiza_Load(object sender, EventArgs e)
+        private async void Analiza_Load(object sender, EventArgs e)
         {
             label2.Text = "DataPomiaru";
             label3.Text = "Miasto";
@@ -57,7 +36,22 @@ namespace WinFormsApp3
             label5.Text = "NazwaRzeki";
             label6.Text = "PoziomWody";
             label7.Text = "StandardowyPoziom";
-          
+
+            var baza = new Baza();
+            var collction = await baza.BaseGetMeasureData();
+
+            var text2 = collction.Select(x => x);
+
+            foreach (var item in text2)
+            {
+                listBox1.Items.Add($"{item.DataPomiaru.ToString("d")}");
+                listBox2.Items.Add($"{item.Miasto.ToString()}");
+                listBox3.Items.Add($"{item.Miejscowosc.ToString()}");
+                listBox5.Items.Add($"{item.NazwaRzeki.ToString()}");
+                listBox4.Items.Add($"{item.PoziomWody.ToString()}");
+                listBox6.Items.Add($"{item.StandardowyPoziom.ToString()}");
+
+            }
 
         }
         /// <summary>
@@ -86,8 +80,6 @@ namespace WinFormsApp3
         private void button2_Click(object sender, EventArgs e)
         {
             var form5 = new Ostrzeganie(selectedIndexlistBox);
-           // form5.listBox1.Items.Add(richTextBox4.Text);
-            //form5.listBox1.Items.Add(richTextBox1.Text);
             form5.ShowDialog();
         }
         /// <summary>
@@ -129,5 +121,7 @@ namespace WinFormsApp3
         {
             AllIndex(listBox6.SelectedIndex);
         }
+
+      
     }
 }
